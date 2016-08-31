@@ -16,21 +16,21 @@ cmake_minimum_required ( VERSION 2.8.12 )
 
 # project
 include ( ${CMAKE_CURRENT_LIST_DIR}/../../resources/cmake/ojdkbuild_common.cmake )
-project ( ojdkbuild_libjpeg C CXX )
+project ( ojdkbuild_libjpeg-turbo C CXX )
 set ( ${PROJECT_NAME}_OJDKBUILD_VERSION 1.2.90-1 )
 
 # static library
-add_subdirectory ( ${CMAKE_CURRENT_LIST_DIR}/resources/libjpeg_1290_cmake ${CMAKE_CURRENT_BINARY_DIR}/lookaside_libjpeg )
+add_subdirectory ( ${CMAKE_CURRENT_LIST_DIR}/resources/libjpeg-turbo_1290_cmake ${CMAKE_CURRENT_BINARY_DIR}/lookaside_libjpeg-turbo )
 
 # shared_library
 add_library ( ${PROJECT_NAME} SHARED ${CMAKE_CURRENT_LIST_DIR}/resources/${PROJECT_NAME}.def )
 set_target_properties ( ${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE C )
-target_link_libraries ( ${PROJECT_NAME} lookaside_libjpeg )
+target_link_libraries ( ${PROJECT_NAME} lookaside_libjpeg-turbo )
 
 # pkg-config
-set ( ${PROJECT_NAME}_MODULE libjpeg )
+set ( ${PROJECT_NAME}_MODULE libjpeg-turbo )
 set ( ${PROJECT_NAME}_BUNDLE_LIB_PATH ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${CMAKE_SHARED_LIBRARY_PREFIX}${PROJECT_NAME}${CMAKE_SHARED_LIBRARY_SUFFIX} )
-set ( ${PROJECT_NAME}_PC_CFLAGS "-I${CMAKE_CURRENT_LIST_DIR}/../../lookaside/libjpeg" )
+set ( ${PROJECT_NAME}_PC_CFLAGS "-I${CMAKE_CURRENT_LIST_DIR}/../../lookaside/libjpeg-turbo -I${CMAKE_CURRENT_LIST_DIR}/resources/libjpeg-turbo_1290_cmake/include" )
 set ( ${PROJECT_NAME}_PC_LIBS "-L${CMAKE_LIBRARY_OUTPUT_DIRECTORY} -l${PROJECT_NAME}" )
 configure_file ( ${CMAKE_CURRENT_LIST_DIR}/../../resources/cmake/pkg-config.in 
-        ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/pkgconfig/libjpeg.pc )
+        ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/pkgconfig/libjpeg-turbo.pc )

@@ -1,0 +1,43 @@
+; Copyright 2016, akashche at redhat.com
+;
+; Licensed under the Apache License, Version 2.0 (the "License");
+; you may not use this file except in compliance with the License.
+; You may obtain a copy of the License at
+;
+; http://www.apache.org/licenses/LICENSE-2.0
+;
+; Unless required by applicable law or agreed to in writing, software
+; distributed under the License is distributed on an "AS IS" BASIS,
+; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+; See the License for the specific language governing permissions and
+; limitations under the License.
+
+EXPORTS
+    jpeg_abort
+    jpeg_abort_decompress
+    jpeg_alloc_huff_table
+    jpeg_alloc_quant_table
+    jpeg_CreateCompress
+    jpeg_CreateDecompress
+    jpeg_consume_input
+    jpeg_destroy
+    jpeg_destroy_decompress
+    jpeg_finish_compress
+    jpeg_finish_decompress
+    jpeg_finish_output
+    jpeg_has_multiple_scans
+    jpeg_input_complete
+    jpeg_read_header
+    jpeg_read_scanlines
+    jpeg_resync_to_restart
+    jpeg_save_markers
+    jpeg_set_colorspace
+    jpeg_set_defaults
+    jpeg_start_compress
+    jpeg_start_decompress
+    jpeg_start_output
+    jpeg_simple_progression
+    jpeg_std_error
+    jpeg_suppress_tables
+    jpeg_write_scanlines
+    jpeg_write_tables
