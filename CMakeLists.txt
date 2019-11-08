@@ -35,6 +35,7 @@ set_property ( TARGET ${PROJECT_NAME} APPEND_STRING PROPERTY LINK_FLAGS "/manife
 
 # pkg-config
 set ( ${PROJECT_NAME}_MODULE ojdkbuild_libjpeg-turbo )
+set ( ${PROJECT_NAME}_SHARED_LIB_PATH ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${CMAKE_SHARED_LIBRARY_PREFIX}${PROJECT_NAME}${CMAKE_SHARED_LIBRARY_SUFFIX} )
 if ( openjdk_32_BIT )
     set ( ${PROJECT_NAME}_PC_CFLAGS "-I${libjpeg-turbo_LOOKASIDE_DIR} -I${OJDKBUILD_DIR}/external/libjpeg-turbo/resources/libjpeg-turbo_cmake/include_windows_i386_msvc" )
 else ( )
